@@ -216,6 +216,7 @@ impl QConvProblem {
             ),
             self.kernel_format,
             kernel.into_arc_tensor(),
+            *self.shape_in.c(),
             self.group,
             self.bias.clone().map(|a| a.into_arc_tensor()),
             Some(cdt),
